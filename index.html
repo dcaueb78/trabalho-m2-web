@@ -20,8 +20,14 @@
 				margin-left: 5px;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" media="screen" href="bootstrap/dist/css/bootstrap.css">
 	</head>
 	<body>
+		<div class="alert alert-danger invisivel text-center shadow" role="alert">
+			<span>
+				VOCÊ É BURRO MEU?
+			</span>
+		</div>
 		<h2>Formulário de cadastro de prestador de serviços</h2>
 		<form name="formulario" action="" onsubmit="return formata();">
 			<div class="campo" style="width: 48%; float: left;">
@@ -67,7 +73,7 @@
 			</fieldset>
 			<fieldset class="grupo" style="width: 60%; float: right;">
 				<legend>Atividades pretendidas</legend>
-				<input type="checkbox" name="atividade" id="analista" value="analista" required />
+				<input type="checkbox" name="atividade" id="analista" value="analista" />
 				<label for="analista">Analista</label>
 				<input type="checkbox" name="atividade" id="programador" value="programador" />
 				<label for="programador">Programador</label>
@@ -80,7 +86,7 @@
 			</fieldset>
 			<fieldset class="acoes" style="width: 98%;">
 				<legend>Ações</legend>
-				<button type='submit'>Enviar</button>
+				<button type='submit' onclick="validar_checkbox()">Enviar</button>
 				<button type='reset'>Reiniciar</button>
 				<button type='button' onclick="alert('ajuda');">Ajuda</button>
 			</fieldset>
