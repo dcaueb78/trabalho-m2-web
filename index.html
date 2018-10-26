@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Trabalho M2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="bootstrap/dist/css/bootstrap.css" />
+	<script src="main.js"></script>
+	<style type="text/css">
+		.grupo,
+		.campo {
+			margin-right: 5px;
+		}
+
+		.acoes {
+			text-align: center;
+			float: left;
+		}
+
+		.campo label {
+			margin-left: 5px;
+		}
+
+		.campo input,
+		select {
+			width: 98%;
+			margin-left: 5px;
+		}
+	</style>
+</head>	
+<body>
+	<h2>Formul�rio de cadastro de prestador de servi�os</h2>
+	<form name="formulario" action="" onsubmit="return formata();">
+		<div class="campo" style="width: 48%; float: left;">
+			<label for="nome">Nome</label>
+			<input type="text" name="nome" id="nome" />
+		</div>
+		<div class="campo" style="width: 47%; float: right;">
+			<label for="sobrenome">Sobrenome</label>
+			<input type="text" name="sobrenome" id="sobrenome" />
+		</div>
+		<fieldset class="grupo" style="width: 33%; float: left;">
+			<legend>Per�odo de disponibilidade</legend>
+			<div class="campo" style="width: 45%; float: left;">
+				<label for="dataini">Data inicial</label>
+				<input type="text" name="dataini" id="dataini" />
+			</div>
+			<div class="campo" style="width: 45%; float: right;">
+				<label for="datafim">Data final</label>
+				<input type="text" name="datafim" id="datafim" />
+			</div>
+		</fieldset>
+		<div class="campo" style="width: 60%; float: right;">
+			<label for="email">E-mail</label>
+			<input type="text" name="email" id="email" />
+		</div>
+		<div class="campo" style="width: 60%; float: right;">
+			<label for="website">Website</label>
+			<input type="text" name="website" id="website" />
+		</div>
+		<br clear="all" />
+		<fieldset class="grupo" style="width: 33%; float: left;">
+			<legend>Principal regi�o de atua��o</legend>
+			<input type="radio" name="regiao" id="sul" value="sul" />
+			<label for="sul">Sul</label>
+			<input type="radio" name="regiao" id="sudeste" value="sudeste" />
+			<label for="sudeste">Sudeste</label>
+			<input type="radio" name="regiao" id="centro" value="centro-oeste" />
+			<label for="centro">Centro-oeste</label>
+			<input type="radio" name="regiao" id="nordeste" value="nordeste" />
+			<label for="nordeste">Nordeste</label>
+			<input type="radio" name="regiao" id="norte" value="norte" />
+			<label for="norte">Norte</label>
+		</fieldset>
+		<fieldset class="grupo" style="width: 60%; float: right;">
+			<legend>Atividades pretendidas</legend>
+			<input type="checkbox" name="atividade" id="analista" value="analista" />
+			<label for="analista">Analista</label>
+			<input type="checkbox" name="atividade" id="programador" value="programador" />
+			<label for="programador">Programador</label>
+			<input type="checkbox" name="atividade" id="webdesigner" value="webdesigner" />
+			<label for="webdesigner">Web-designer</label>
+			<input type="checkbox" name="atividade" id="dba" value="dba" />
+			<label for="dba">DBA</label>
+			<input type="checkbox" name="atividade" id="administrador" value="administrador-rede" />
+			<label for="administrador">Administrador de rede</label>
+		</fieldset>
+		<fieldset class="acoes" style="width: 98%;">
+			<legend>A��es</legend>
+			<button type='submit'>Enviar</button>
+			<button type='reset'>Reiniciar</button>
+			<button type='button' onclick="alert('ajuda');">Ajuda</button>
+		</fieldset>
+	</form>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+</body>
+</body>
+</html>
