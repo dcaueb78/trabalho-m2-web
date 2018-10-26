@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Trabalho M2</title>
+		<script src="js/main.js"></script>
 		<style type="text/css">
 			.grupo, .campo{
 				margin-right: 5px;
@@ -25,26 +26,26 @@
 		<form name="formulario" action="" onsubmit="return formata();">
 			<div class="campo" style="width: 48%; float: left;">
 				<label for="nome">Nome</label>
-				<input type="text" name="nome" id="nome" />
+				<input type="text" name="nome" id="nome"  required/>
 			</div>							 
 			<div class="campo" style="width: 47%; float: right;">
 				<label for="sobrenome">Sobrenome</label>
-				<input type="text" name="sobrenome" id="sobrenome" />
+				<input type="text" name="sobrenome" id="sobrenome" required />
 			</div>
 			<fieldset class="grupo" style="width: 33%; float: left;">
 				<legend>Período de disponibilidade</legend>
 				<div class="campo" style="width: 45%; float: left;">
 					<label for="dataini">Data inicial</label>
-					<input type="text" name="dataini" id="dataini" />
+					<input type="text" name="dataini" id="dataini" required />
 				</div>
 				<div class="campo" style="width: 45%; float: right;">
 					<label for="datafim">Data final</label>
-					<input type="text" name="datafim" id="datafim" />
+					<input type="text" name="datafim" id="datafim" required/>
 				</div>
 			</fieldset>
 			<div class="campo" style="width: 60%; float: right;">
 				<label for="email">E-mail</label>
-				<input type="text" name="email" id="email" />
+				<input type="text" name="email" id="email" required/>
 			</div>
 			<div class="campo" style="width: 60%; float: right;">
 				<label for="website">Website</label>
@@ -53,9 +54,9 @@
 			<br clear="all" />
 			<fieldset class="grupo" style="width: 33%; float: left;">
 				<legend>Principal região de atuação</legend>
-				<input type="radio" name="regiao" id="sul" value="sul" />
+				<input type="radio" name="regiao" id="sul" value="sul" required/>
 				<label for="sul">Sul</label>
-				<input type="radio" name="regiao" id="sudeste" value="sudeste" />
+				<input type="radio" name="regiao" id="sudeste" value="sudeste"/>
 				<label for="sudeste">Sudeste</label>
 				<input type="radio" name="regiao" id="centro" value="centro-oeste" />
 				<label for="centro">Centro-oeste</label>
@@ -66,7 +67,7 @@
 			</fieldset>
 			<fieldset class="grupo" style="width: 60%; float: right;">
 				<legend>Atividades pretendidas</legend>
-				<input type="checkbox" name="atividade" id="analista" value="analista" />
+				<input type="checkbox" name="atividade" id="analista" value="analista" required />
 				<label for="analista">Analista</label>
 				<input type="checkbox" name="atividade" id="programador" value="programador" />
 				<label for="programador">Programador</label>
