@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Trabalho M2</title>
+		<style type="text/css">
+			.grupo, .campo{
+				margin-right: 5px;
+			}
+			.acoes{
+				text-align: center;
+				float: left;
+			}
+			.campo label{
+				margin-left: 5px;
+			}
+			.campo input, select{
+				width: 98%;
+				margin-left: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Formulário de cadastro de prestador de serviços</h2>
+		<form name="formulario" action="" onsubmit="return formata();">
+			<div class="campo" style="width: 48%; float: left;">
+				<label for="nome">Nome</label>
+				<input type="text" name="nome" id="nome" />
+			</div>							 
+			<div class="campo" style="width: 47%; float: right;">
+				<label for="sobrenome">Sobrenome</label>
+				<input type="text" name="sobrenome" id="sobrenome" />
+			</div>
+			<fieldset class="grupo" style="width: 33%; float: left;">
+				<legend>Período de disponibilidade</legend>
+				<div class="campo" style="width: 45%; float: left;">
+					<label for="dataini">Data inicial</label>
+					<input type="text" name="dataini" id="dataini" />
+				</div>
+				<div class="campo" style="width: 45%; float: right;">
+					<label for="datafim">Data final</label>
+					<input type="text" name="datafim" id="datafim" />
+				</div>
+			</fieldset>
+			<div class="campo" style="width: 60%; float: right;">
+				<label for="email">E-mail</label>
+				<input type="text" name="email" id="email" />
+			</div>
+			<div class="campo" style="width: 60%; float: right;">
+				<label for="website">Website</label>
+				<input type="text" name="website" id="website" />
+			</div>
+			<br clear="all" />
+			<fieldset class="grupo" style="width: 33%; float: left;">
+				<legend>Principal região de atuação</legend>
+				<input type="radio" name="regiao" id="sul" value="sul" />
+				<label for="sul">Sul</label>
+				<input type="radio" name="regiao" id="sudeste" value="sudeste" />
+				<label for="sudeste">Sudeste</label>
+				<input type="radio" name="regiao" id="centro" value="centro-oeste" />
+				<label for="centro">Centro-oeste</label>
+				<input type="radio" name="regiao" id="nordeste" value="nordeste" />
+				<label for="nordeste">Nordeste</label>
+				<input type="radio" name="regiao" id="norte" value="norte" />
+				<label for="norte">Norte</label>
+			</fieldset>
+			<fieldset class="grupo" style="width: 60%; float: right;">
+				<legend>Atividades pretendidas</legend>
+				<input type="checkbox" name="atividade" id="analista" value="analista" />
+				<label for="analista">Analista</label>
+				<input type="checkbox" name="atividade" id="programador" value="programador" />
+				<label for="programador">Programador</label>
+				<input type="checkbox" name="atividade" id="webdesigner" value="webdesigner" />
+				<label for="webdesigner">Web-designer</label>
+				<input type="checkbox" name="atividade" id="dba" value="dba" />
+				<label for="dba">DBA</label>
+				<input type="checkbox" name="atividade" id="administrador" value="administrador-rede" />
+				<label for="administrador">Administrador de rede</label>
+			</fieldset>
+			<fieldset class="acoes" style="width: 98%;">
+				<legend>Ações</legend>
+				<button type='submit'>Enviar</button>
+				<button type='reset'>Reiniciar</button>
+				<button type='button' onclick="alert('ajuda');">Ajuda</button>
+			</fieldset>
+		</form>
+	</body>
+</html>
