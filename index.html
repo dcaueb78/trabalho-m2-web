@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" media="screen" href="bootstrap/dist/css/bootstrap.css" />
 		<title>Trabalho M2</title>
 		<script src="js/main.js"></script>
 		<style type="text/css">
@@ -19,77 +20,78 @@
 				width: 98%;
 				margin-left: 5px;
 			}
+			.red {
+				color: #FF0000;
+			}
 		</style>
-		<link rel="stylesheet" type="text/css" media="screen" href="bootstrap/dist/css/bootstrap.css">
 	</head>
 	<body>
-		<div class="alert alert-danger invisivel text-center shadow" role="alert">
-			<span>
-				VOCÊ É BURRO MEU?
-			</span>
+		<div name="error" id="error"></div>
+		<div class="container">
+			<h2>Formulário de cadastro de prestador de serviços</h2>
+			<form name="formulario" action="" onsubmit="return valida();">
+				<div class="campo">
+					<label for="nome">Nome<span class="red" id="span-nome"></span></label>
+					<input type="text" name="nome" id="nome"/>
+				</div>							 
+				<div class="campo">
+					<label for="sobrenome">Sobrenome<span class="red" id="span-sobrenome"></span></label>
+					<input type="text" name="sobrenome" id="sobrenome"/>
+				</div>
+				<fieldset class="grupo">
+					<legend>Período de disponibilidade</legend>
+					<div class="campo">
+						<label for="dataini">Data inicial<span class="red" id="span-data-inicial"></span></label>
+						<input type="date" name="dataini" id="dataini"/>
+					</div>
+					<div class="campo">
+						<label for="datafim">Data final<span class="red" id="span-data-final"></span></label>
+						<input type="date" name="datafim" id="datafim"/>
+					</div>
+				</fieldset>
+				<div class="campo" >
+					<label for="email">E-mail<span class="red" id="span-email"></span></label>
+					<input type="text" name="email" id="email" />
+				</div>
+				<div class="campo">
+					<label for="website">Website<span class="red" id="span-website"></span></label>
+					<input type="text" name="website" id="website"/>
+				</div>
+				<br clear="all" />
+				<fieldset class="grupo">
+					<legend>Principal região de atuação<span class="red" id="span-radio"></span></legend>
+					<input type="radio" name="regiao" id="sul" value="sul" onclick="reset_checkbox()"/>
+					<label for="sul">Sul</label>
+					<input type="radio" name="regiao" id="sudeste" value="sudeste" onclick="reset_checkbox()"/>
+					<label for="sudeste">Sudeste</label>
+					<input type="radio" name="regiao" id="centro" value="centro-oeste" onclick="desativa_checkbox()"/>
+					<label for="centro">Centro-oeste</label>
+					<input type="radio" name="regiao" id="nordeste" value="nordeste" onclick="reset_checkbox()"/>
+					<label for="nordeste">Nordeste</label>
+					<input type="radio" name="regiao" id="norte" value="norte" onclick="reset_checkbox()"/>
+					<label for="norte">Norte</label>
+				</fieldset>
+				<fieldset class="grupo">
+					<legend>Atividades pretendidas<span class="red" id="span-checkbox"></span></legend>
+					<input type="checkbox" name="atividade" id="analista" value="analista"  />
+					<label for="analista">Analista</label>
+					<input type="checkbox" name="atividade" id="programador" value="programador" />
+					<label for="programador">Programador</label>
+					<input type="checkbox" name="atividade" id="webdesigner" value="webdesigner" />
+					<label for="webdesigner">Web-designer</label>
+					<input type="checkbox" name="atividade" id="dba" value="dba" />
+					<label for="dba">DBA</label>
+					<input type="checkbox" name="atividade" id="administrador" value="administrador-rede" />
+					<label for="administrador">Administrador de rede</label>
+				</fieldset>
+				<fieldset class="acoes">
+					<legend>Ações</legend>
+					<button type='submit' onclick="">Enviar</button>
+					<button type='reset'>Reiniciar</button>
+					<button type='button' onclick="show_help()">Ajuda</button>
+				</fieldset>
+			</form>
+			<span name="teste"></span>
 		</div>
-		<h2>Formulário de cadastro de prestador de serviços</h2>
-		<form name="formulario" action="" onsubmit="return formata();">
-			<div class="campo" style="width: 48%; float: left;">
-				<label for="nome">Nome</label>
-				<input type="text" name="nome" id="nome"  required/>
-			</div>							 
-			<div class="campo" style="width: 47%; float: right;">
-				<label for="sobrenome">Sobrenome</label>
-				<input type="text" name="sobrenome" id="sobrenome" required />
-			</div>
-			<fieldset class="grupo" style="width: 33%; float: left;">
-				<legend>Período de disponibilidade</legend>
-				<div class="campo" style="width: 45%; float: left;">
-					<label for="dataini">Data inicial</label>
-					<input type="text" name="dataini" id="dataini" required />
-				</div>
-				<div class="campo" style="width: 45%; float: right;">
-					<label for="datafim">Data final</label>
-					<input type="text" name="datafim" id="datafim" required/>
-				</div>
-			</fieldset>
-			<div class="campo" style="width: 60%; float: right;">
-				<label for="email">E-mail</label>
-				<input type="text" name="email" id="email" required/>
-			</div>
-			<div class="campo" style="width: 60%; float: right;">
-				<label for="website">Website</label>
-				<input type="text" name="website" id="website" />
-			</div>
-			<br clear="all" />
-			<fieldset class="grupo" style="width: 33%; float: left;">
-				<legend>Principal região de atuação</legend>
-				<input type="radio" name="regiao" id="sul" value="sul" required/>
-				<label for="sul">Sul</label>
-				<input type="radio" name="regiao" id="sudeste" value="sudeste"/>
-				<label for="sudeste">Sudeste</label>
-				<input type="radio" name="regiao" id="centro" value="centro-oeste" />
-				<label for="centro">Centro-oeste</label>
-				<input type="radio" name="regiao" id="nordeste" value="nordeste" />
-				<label for="nordeste">Nordeste</label>
-				<input type="radio" name="regiao" id="norte" value="norte" />
-				<label for="norte">Norte</label>
-			</fieldset>
-			<fieldset class="grupo" style="width: 60%; float: right;">
-				<legend>Atividades pretendidas</legend>
-				<input type="checkbox" name="atividade" id="analista" value="analista" />
-				<label for="analista">Analista</label>
-				<input type="checkbox" name="atividade" id="programador" value="programador" />
-				<label for="programador">Programador</label>
-				<input type="checkbox" name="atividade" id="webdesigner" value="webdesigner" />
-				<label for="webdesigner">Web-designer</label>
-				<input type="checkbox" name="atividade" id="dba" value="dba" />
-				<label for="dba">DBA</label>
-				<input type="checkbox" name="atividade" id="administrador" value="administrador-rede" />
-				<label for="administrador">Administrador de rede</label>
-			</fieldset>
-			<fieldset class="acoes" style="width: 98%;">
-				<legend>Ações</legend>
-				<button type='submit' onclick="validar_checkbox()">Enviar</button>
-				<button type='reset'>Reiniciar</button>
-				<button type='button' onclick="alert('ajuda');">Ajuda</button>
-			</fieldset>
-		</form>
 	</body>
 </html>
